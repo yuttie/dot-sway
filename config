@@ -29,6 +29,9 @@ set $right l
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Don't let focus follow a mouse cursor
+focus_follows_mouse no
+
 # start a terminal
 bindsym $mod+semicolon exec ~/dotfiles/launch-st -- zsh --login
 bindsym $mod+e exec ~/dotfiles/launch-st -e nvim
