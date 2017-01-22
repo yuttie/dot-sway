@@ -31,6 +31,8 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+semicolon exec ~/dotfiles/launch-st -- zsh --login
+bindsym $mod+e exec ~/dotfiles/launch-st -e nvim
+bindsym $mod+w exec firefox
 
 # kill focused window
 bindsym $mod+Control+c kill
