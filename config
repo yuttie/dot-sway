@@ -127,9 +127,9 @@ bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | ruby -r json -e
 bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu`
 
 # reload the configuration file
-bindsym $mod+Control+l reload
+bindsym $mod+Control+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Control+r restart
+bindsym $mod+Control+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Control+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
