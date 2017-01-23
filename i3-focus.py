@@ -15,7 +15,7 @@ def windows_in_current_workspace():
     # Find the node corresponding to the workspace
     wsnode = i3.filter(i3.get_tree(), num=workspace['num'], name=workspace['name'])[0]
     # Enumerate windows in the workspace
-    windows = i3.filter(wsnode['nodes'], nodes=[])
+    windows = i3.filter(wsnode['nodes'] + wsnode['floating_nodes'], nodes=[])
     return windows
 
 
