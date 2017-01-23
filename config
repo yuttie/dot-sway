@@ -59,6 +59,9 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
+bindsym $mod+n exec python ~/.i3/i3-focus.py next
+bindsym $mod+p exec python ~/.i3/i3-focus.py prev
+
 # move focused window
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
