@@ -115,9 +115,9 @@ bindsym $mod+bracketright workspace next
 bindsym $mod+bracketleft workspace prev
 
 # switch or move focused container to dynamically selected workspace
-bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu`
-bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu`
-bindsym $mod+Shift+m exec "w=$(i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w[\\"name\\"]) }' | rofi -dmenu); i3-msg \\"move container to workspace $w; workspace $w\\""
+bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace:"`
+bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace:"`
+bindsym $mod+Shift+m exec "w=$(i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w[\\"name\\"]) }' | rofi -dmenu -p 'workspace:'); i3-msg \\"move container to workspace $w; workspace $w\\""
 
 # reload the configuration file
 bindsym $mod+Control+r reload; exec notify-send --icon=cs-general --expire-time=3000 i3 'Configuration reloaded.'
