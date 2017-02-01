@@ -12,14 +12,13 @@ usage: i3-sort-ws"""
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
-        workspaces = i3.get_workspaces()
-        stripped_names = list(re.sub(r'^[0-9]+ *: *', r'', ws['name']) for ws in workspaces)
-        prefix = 'tmp' + ''.join(ws['name'] for ws in workspaces)
-        sorted_indices = sorted(range(len(workspaces)), key=lambda k: stripped_names[k])
-        for i, ws in enumerate(workspaces):
-            i3.command('rename', 'workspace', ws['name'], 'to', prefix + str(i))
+        names = list(ws['name'] for ws in i3.get_workspaces())
+        stripped_names = list(re.sub(r'^[0-9]+ *: *', r'', name) for name in names)
+        suffix = max(len(name) for name in names) * '_'
+        sorted_indices = sorted(range(len(names)), key=lambda k: stripped_names[k])
+        for i, name in enumerate(names):
+            i3.command('rename', 'workspace', name, 'to', str(i) + suffix)
         for i, j in enumerate(sorted_indices):
-            ws = workspaces[j]
-            i3.command('rename', 'workspace', prefix + str(j), 'to', str(i) + ':' + stripped_names[j])
+            i3.command('rename', 'workspace', str(j) + suffix, 'to', str(i) + ':' + stripped_names[j])
     else:
         print(USAGE, file=sys.stderr)
