@@ -1,0 +1,54 @@
+#!/usr/bin/python
+import sys
+
+import i3
+
+
+USAGE = """i3-sort-ws
+
+usage: i3-sort-ws"""
+
+
+def windows_in_current_workspace():
+    # Get the current workspace
+    workspace = i3.filter(i3.get_workspaces(), focused=True)[0]
+    # Find the node corresponding to the workspace
+    wsnode = i3.filter(i3.get_tree(), num=workspace['num'], name=workspace['name'])[0]
+    # Enumerate windows in the workspace
+    windows = i3.filter(wsnode['nodes'] + wsnode['floating_nodes'], nodes=[])
+    return windows
+
+
+def next_window():
+    windows = windows_in_current_workspace()
+    i = 0
+    while not windows[i]['focused']:
+        i += 1
+    j = (i + 1) % len(windows)
+    target_id = windows[j]['id']
+    return target_id
+
+
+def prev_window():
+    windows = windows_in_current_workspace()
+    i = 0
+    while not windows[i]['focused']:
+        i += 1
+    j = (i - 1) % len(windows)
+    target_id = windows[j]['id']
+    return target_id
+
+
+if __name__ == '__main__':
+    if len(sys.argv) == 1:
+        print(i3.get_workspaces())
+        workspaces = i3.get_workspaces()
+        prefix = 'tmp' + ''.join(ws['name'] for ws in workspaces)
+        sorted_indices = sorted(range(len(workspaces)), key=lambda k: workspaces[k]['name'])
+        for i, ws in enumerate(workspaces):
+            i3.command('rename', 'workspace', ws['name'], 'to', prefix + str(i))
+        for i, j in enumerate(sorted_indices):
+            ws = workspaces[j]
+            i3.command('rename', 'workspace', prefix + str(j), 'to', str(i) + ':' + ws['name'])
+    else:
+        print(USAGE, file=sys.stderr)
