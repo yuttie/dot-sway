@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import re
 import sys
 
 import i3
@@ -41,14 +42,14 @@ def prev_window():
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
-        print(i3.get_workspaces())
         workspaces = i3.get_workspaces()
+        stripped_names = list(re.sub(r'^[0-9]+ *: *', r'', ws['name']) for ws in workspaces)
         prefix = 'tmp' + ''.join(ws['name'] for ws in workspaces)
-        sorted_indices = sorted(range(len(workspaces)), key=lambda k: workspaces[k]['name'])
+        sorted_indices = sorted(range(len(workspaces)), key=lambda k: stripped_names[k])
         for i, ws in enumerate(workspaces):
             i3.command('rename', 'workspace', ws['name'], 'to', prefix + str(i))
         for i, j in enumerate(sorted_indices):
             ws = workspaces[j]
-            i3.command('rename', 'workspace', prefix + str(j), 'to', str(i) + ':' + ws['name'])
+            i3.command('rename', 'workspace', prefix + str(j), 'to', str(i) + ':' + stripped_names[j])
     else:
         print(USAGE, file=sys.stderr)
