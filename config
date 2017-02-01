@@ -113,6 +113,9 @@ bindsym $mod+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus scratchpad show
 
+# Sort workspaces
+bindsym $mod+Control+s exec python ~/.i3/i3-sort-ws
+
 # switch to workspace
 bindsym $mod+bracketright workspace next
 bindsym $mod+bracketleft workspace prev
