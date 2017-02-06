@@ -114,7 +114,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Sort workspaces
-bindsym $mod+Control+s exec python ~/.i3/i3-sort-ws
+bindsym $mod+Control+s exec python ~/.i3/i3-sort-ws; exec notify-send --icon=view-sort-ascending-symbolic --expire-time=3000 i3 'Workspaces sorted.'
 
 # switch to workspace
 bindsym $mod+bracketright workspace next
