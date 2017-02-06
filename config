@@ -126,9 +126,9 @@ bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces
 bindsym $mod+Shift+m exec "w=$(i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w[\\"name\\"]) }' | rofi -dmenu -p 'workspace:'); i3-msg \\"move container to workspace $w; workspace $w\\""
 
 # reload the configuration file
-bindsym $mod+Control+r reload; exec notify-send --icon=cs-general --expire-time=3000 i3 'Configuration reloaded.'
+bindsym $mod+Control+r reload; exec notify-send --icon=system-run-symbolic --expire-time=3000 i3 'Configuration reloaded.'
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Control+Shift+r exec "i3-msg restart; notify-send --icon=system-reboot --expire-time=3000 i3 'Restarted.'"
+bindsym $mod+Control+Shift+r exec "i3-msg restart; notify-send --icon=system-restart-symbolic --expire-time=3000 i3 'Restarted.'"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Control+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
