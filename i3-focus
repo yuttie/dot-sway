@@ -42,9 +42,9 @@ def prev_window():
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         if sys.argv[1] == 'next-window':
-            print(next_window())
+            i3.focus(con_id=next_window())
         elif sys.argv[1] == 'prev-window':
-            print(prev_window())
+            i3.focus(con_id=prev_window())
         else:
             print(USAGE, file=sys.stderr)
     else:
