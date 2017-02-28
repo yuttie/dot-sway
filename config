@@ -43,6 +43,7 @@ bindsym $mod+w exec firefox
 bindsym $mod+Shift+w exec google-chrome-stable
 bindsym $mod+Print exec "scrot screen_%Y-%m-%d-%H-%M-%S.png; notify-send --icon=shutter --expire-time=1500 i3 'Screen captured.'"
 bindsym $mod+Control+Print exec "scrot window_%Y-%m-%d-%H-%M-%S.png -u; notify-send --icon=shutter --expire-time=1500 i3 'Window captured.'"
+bindsym --release $mod+Shift+Print exec "import region.png; notify-send --icon=shutter --expire-time=1500 i3 'Region captured.'"
 
 # kill focused window
 bindsym $mod+Control+c kill
