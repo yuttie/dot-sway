@@ -36,7 +36,7 @@ focus_follows_mouse no
 bindsym --release button2 kill
 
 # start a terminal
-bindsym $mod+semicolon exec ~/dotfiles/launch-st -- zsh --login
+bindsym $mod+semicolon exec ~/dotfiles/launch-st
 bindsym $mod+e exec ~/dotfiles/launch-st -e nvim
 bindsym $mod+Shift+e exec emacsclient --alternate-editor='' --create-frame --no-wait
 bindsym $mod+w exec firefox
