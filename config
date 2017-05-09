@@ -8,9 +8,14 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+# Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #2473c6 #2473c6 #ffffff #1889ff   #2473c6
+client.focused_inactive #425162 #425162 #ffffff #46668a   #425162
+client.unfocused        #303841 #303841 #888888 #3c5169   #303841
+client.urgent           #2f343a #ba123f #ffffff #eb003f   #ba123f
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
