@@ -17,8 +17,8 @@ if __name__ == '__main__':
         suffix = max(len(name) for name in names) * '_'
         sorted_indices = sorted(range(len(names)), key=lambda k: stripped_names[k])
         for i, name in enumerate(names):
-            i3.command('rename', 'workspace', name, 'to', str(i) + suffix)
+            i3.command('rename', 'workspace', '"{}"'.format(name), 'to', '"{}{}"'.format(str(i), suffix))
         for i, j in enumerate(sorted_indices):
-            i3.command('rename', 'workspace', str(j) + suffix, 'to', str(i) + ':' + stripped_names[j])
+            i3.command('rename', 'workspace', '"{}{}"'.format(str(j), suffix), 'to', '"{}:{}"'.format(str(i), stripped_names[j]))
     else:
         print(USAGE, file=sys.stderr)
