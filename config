@@ -196,3 +196,4 @@ focus_on_window_activation urgent
 
 # Start applications
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/dotfiles/launch-compton.sh
