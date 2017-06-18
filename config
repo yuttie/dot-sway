@@ -31,6 +31,10 @@ set $down j
 set $left h
 set $right l
 
+# Gaps
+gaps inner 24
+gaps outer 8
+
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
