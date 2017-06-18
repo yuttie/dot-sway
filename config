@@ -10,11 +10,11 @@ font pango:monospace 8
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #2473c6 #2473c6 #ffffff #1889ff   #2473c6
-client.focused_inactive #425162 #425162 #ffffff #46668a   #425162
-client.unfocused        #303841 #303841 #888888 #3c5169   #303841
-client.urgent           #2f343a #ba123f #ffffff #eb003f   #ba123f
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          #344d69 #344d69 #ffffff #344d69   #344d69
+client.focused_inactive #3f4b58 #3f4b58 #cccccc #3f4b58   #3f4b58
+client.unfocused        #323c46 #323c46 #aaaaaa #323c46   #323c46
+client.urgent           #693434 #693434 #ffffff #693434   #693434
+client.placeholder      #000000 #000000 #ffffff #000000   #000000
 client.background       #ffffff
 
 # Before i3 v4.8, we used to recommend this one as the default:
