@@ -35,6 +35,10 @@ set $right l
 gaps inner 24
 gaps outer 8
 
+# Borders
+new_window normal 0
+new_float  normal 0
+
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
