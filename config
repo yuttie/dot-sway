@@ -141,6 +141,12 @@ bindsym $mod+Next  workspace next_on_output
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth
 
+# move the whole workspace to other screen
+bindsym $mod+Shift+Control+Left move workspace to output left
+bindsym $mod+Shift+Control+Down move workspace to output down
+bindsym $mod+Shift+Control+Up move workspace to output up
+bindsym $mod+Shift+Control+Right move workspace to output right
+
 # switch or move focused container to dynamically selected workspace
 bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace:"`
 bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace:"`
