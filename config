@@ -190,6 +190,7 @@ for_window [class="^mpv$"]                                  floating enable
 for_window [class="^MPlayer$"]                              floating enable
 for_window [class="^Gnome-mplayer$"]                        floating enable
 for_window [class="^Gimp$"]                                 floating enable
+for_window [class="^Textext.py$"]                           floating enable
 for_window [class="^Audacious$"]                            floating enable
 for_window [class="^Uim-pref-gtk$"]                         floating enable
 for_window [class="^Pidgin$"]                               floating enable
