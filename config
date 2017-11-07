@@ -10,10 +10,10 @@ font pango:monospace 8
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #344d69 #344d69 #ffffff #344d69   #344d69
-client.focused_inactive #3f4b58 #3f4b58 #cccccc #3f4b58   #3f4b58
-client.unfocused        #323c46 #323c46 #aaaaaa #323c46   #323c46
-client.urgent           #693434 #693434 #ffffff #693434   #693434
+client.focused          #35bcb4 #35bcb4 #202020 #35bcb4   #35bcb4
+client.focused_inactive #35bcb4 #e0e0e0 #808080 #e0e0e0   #35bcb4
+client.unfocused        #e0e0e0 #e0e0e0 #808080 #e0e0e0   #e0e0e0
+client.urgent           #bc3546 #bc3546 #ffffff #bc3546   #bc3546
 client.placeholder      #000000 #000000 #ffffff #000000   #000000
 client.background       #ffffff
 
