@@ -62,7 +62,7 @@ bindsym --release $mod+Shift+Print exec "import region.png; notify-send --icon=s
 bindsym $mod+Control+c kill
 
 # start a program launcher
-bindsym $mod+r exec rofi -show run
+bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -show run
 bindsym $mod+d exec xdg-open `find ~/ -type f -regextype posix-extended -iregex '.+\.(pdf|docx?|xlsx?)$' | rofi -dmenu -i -p "open a document:"`
 
 # change focus
