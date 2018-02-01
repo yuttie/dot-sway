@@ -38,6 +38,8 @@ gaps outer 8
 # Borders
 new_window normal 2
 new_float  normal 2
+# Force the border to any windows
+for_window [class=".*"] border pixel 2
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
