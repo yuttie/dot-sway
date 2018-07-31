@@ -155,6 +155,8 @@ bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | ruby -r json -e
 bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace:"`
 bindsym $mod+Shift+m exec "w=$(i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w[\\"name\\"]) }' | rofi -dmenu -p 'workspace:'); i3-msg \\"move container to workspace $w; workspace $w\\""
 
+# Lock
+bindsym $mod+Control+x exec xautolock -locknow
 # reload the configuration file
 bindsym $mod+Control+r reload; exec notify-send --icon=system-run-symbolic --expire-time=3000 i3 'Configuration reloaded.'
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
