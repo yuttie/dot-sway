@@ -65,7 +65,7 @@ bindsym $mod+Control+c kill
 
 # start a program launcher
 bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -show run -matching regex
-bindsym $mod+c exec "cmd=$(rofi -dmenu -p 'Ruby Expression: '); notify-send --icon=terminal --expire-time=60000 \\"$cmd\\" \\"$(ruby -e \\"$cmd\\")\\""
+bindsym $mod+c exec python ~/.i3/quick-command
 bindsym $mod+Shift+d exec xdg-open `find ~/ -type f -regextype posix-extended -iregex '.+\.(pdf|docx?|xlsx?)$' | rofi -dmenu -i -p "open a document:"`
 
 # change focus

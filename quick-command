@@ -1,0 +1,30 @@
+#!/usr/bin/python
+import re
+import subprocess
+
+
+def read_commandline():
+    result = subprocess.run(['rofi', '-dmenu', '-p', 'Command'], stdout=subprocess.PIPE)
+    commandline = result.stdout.rstrip()
+    return commandline
+
+
+def notify(commandline, result):
+    if result.returncode == 0:
+        icon = 'terminal'
+    else:
+        icon = 'computer-fail'
+    subprocess.run([
+        'notify-send',
+        '--icon=' + icon,
+        '--expire-time=60000',
+        commandline,
+        result.stdout.rstrip()
+    ])
+
+
+if __name__ == '__main__':
+    commandline = read_commandline()
+    args = re.split(b'\s+', commandline)
+    result = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    notify(commandline, result)
