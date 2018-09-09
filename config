@@ -66,7 +66,7 @@ bindsym $mod+Control+c kill
 # start a program launcher
 bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -show run -matching regex
 bindsym $mod+c exec python ~/.i3/quick-command
-bindsym $mod+Shift+d exec xdg-open `find ~/ -type f -regextype posix-extended -iregex '.+\.(pdf|docx?|xlsx?)$' | rofi -dmenu -i -p "open a document:"`
+bindsym $mod+Shift+d exec xdg-open `find ~/ -type f -regextype posix-extended -iregex '.+\.(pdf|docx?|xlsx?)$' | rofi -dmenu -i -p "open a document"`
 
 # change focus
 bindsym $mod+$left focus left
@@ -151,9 +151,9 @@ bindsym $mod+Shift+Control+Up move workspace to output up
 bindsym $mod+Shift+Control+Right move workspace to output right
 
 # switch or move focused container to dynamically selected workspace
-bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace:"`
-bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace:"`
-bindsym $mod+Shift+m exec "w=$(i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w[\\"name\\"]) }' | rofi -dmenu -p 'workspace:'); i3-msg \\"move container to workspace $w; workspace $w\\""
+bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace"`
+bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace"`
+bindsym $mod+Shift+m exec "w=$(i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w[\\"name\\"]) }' | rofi -dmenu -p 'workspace'); i3-msg \\"move container to workspace $w; workspace $w\\""
 
 # Lock
 bindsym $mod+Control+x exec xautolock -locknow
