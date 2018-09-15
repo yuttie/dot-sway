@@ -32,7 +32,7 @@ set $left h
 set $right l
 
 # Gaps
-gaps inner 24
+gaps inner 16
 gaps outer 8
 
 # Borders
