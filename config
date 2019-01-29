@@ -144,6 +144,12 @@ bindsym $mod+Next  workspace next_on_output
 bindsym $mod+b workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth
 
+# switch to another output (display)
+bindsym $mod+Control+Left focus output left
+bindsym $mod+Control+Down focus output down
+bindsym $mod+Control+Up focus output up
+bindsym $mod+Control+Right focus output right
+
 # move the whole workspace to another output (display)
 bindsym $mod+Shift+Control+Left move workspace to output left
 bindsym $mod+Shift+Control+Down move workspace to output down
