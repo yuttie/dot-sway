@@ -13,12 +13,16 @@ usage: i3-sort-ws"""
 if __name__ == '__main__':
     if len(sys.argv) == 1:
         names = list(ws['name'] for ws in i3.get_workspaces())
-        stripped_names = list(re.sub(r'^[0-9]+ *: *', r'', name) for name in names)
-        suffix = max(len(name) for name in names) * '_'
-        sorted_indices = sorted(range(len(names)), key=lambda k: stripped_names[k])
-        for i, name in enumerate(names):
-            i3.command('rename', 'workspace', '"{}"'.format(name), 'to', '"{}{}"'.format(str(i), suffix))
-        for i, j in enumerate(sorted_indices):
-            i3.command('rename', 'workspace', '"{}{}"'.format(str(j), suffix), 'to', '"{}:{}"'.format(str(i), stripped_names[j]))
+        if any(re.fullmatch(r'\d+_+', name) for name in names):
+            print('Found temporary workspace names.\nExiting.', file=sys.stderr)
+        else:
+            stripped_names = list(re.sub(r'^[0-9]+ *: *', r'', name) for name in names)
+            suffix = max(len(name) for name in names) * '_'
+            sorted_indices = sorted(range(len(names)), key=lambda k: stripped_names[k])
+            for i, name in enumerate(names):
+                i3.command('rename', 'workspace', '"{}"'.format(name), 'to', '"{}{}"'.format(str(i), suffix))
+                print('"{}{}"'.format(str(i), suffix))
+            for i, j in enumerate(sorted_indices):
+                i3.command('rename', 'workspace', '"{}{}"'.format(str(j), suffix), 'to', '"{}:{}"'.format(str(i), stripped_names[j]))
     else:
         print(USAGE, file=sys.stderr)
