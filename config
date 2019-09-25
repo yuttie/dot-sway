@@ -10,11 +10,11 @@ font pango:Roboto, Source Han Sans bold 9
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #82bfd9 #82bfd9 #212121 #FFF176   #82bfd9
-client.focused_inactive #e0e0e0 #aeaeae #606060 #aeaeae   #aeaeae
-client.unfocused        #aeaeae #aeaeae #606060 #aeaeae   #aeaeae
-client.urgent           #d9828c #d9828c #602022 #d9828c   #d9828c
-client.placeholder      #000000 #000000 #212121 #aeaeae   #000000
+client.focused          #444444 #444444 #629fb9 #FFF176   #444444
+client.focused_inactive #e0e0e0 #222222 #555555 #222222   #222222
+client.unfocused        #222222 #222222 #555555 #222222   #222222
+client.urgent           #602022 #602022 #d9828c #602022   #602022
+client.placeholder      #000000 #000000 #212121 #222222   #000000
 client.background       #ffffff
 
 # Before i3 v4.8, we used to recommend this one as the default:
