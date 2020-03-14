@@ -10,8 +10,8 @@ font pango:Nunito 12
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #444444 #444444 #629fb9 #FFF176   #444444
-client.focused_inactive #e0e0e0 #222222 #555555 #222222   #222222
+client.focused          #444444 #444444 #629fb9 #444444   #444444
+client.focused_inactive #2c2c2c #2c2c2c #629fb9 #222222   #222222
 client.unfocused        #222222 #222222 #555555 #222222   #222222
 client.urgent           #602022 #602022 #d9828c #602022   #602022
 client.placeholder      #000000 #000000 #212121 #222222   #000000
