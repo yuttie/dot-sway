@@ -68,6 +68,7 @@ bindsym $mod+Control+c kill
 bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -show run -matching regex
 bindsym $mod+c exec python3.7 ~/.i3/quick-command
 bindsym $mod+Shift+d exec xdg-open `find ~/ -type f -regextype posix-extended -iregex '.+\.(pdf|docx?|xlsx?)$' | rofi -dmenu -i -p "open a document"`
+bindsym $mod+Control+d exec /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
 
 # change focus
 bindsym $mod+$left focus left
