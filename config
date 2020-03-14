@@ -52,8 +52,8 @@ focus_follows_mouse no
 bindsym --release button2 kill
 
 # start a terminal
-bindsym $mod+semicolon exec ~/.local/bin/st
-bindsym $mod+e exec ~/.local/bin/st -e nvim
+bindsym $mod+semicolon exec ~/.local/bin/term
+bindsym $mod+e exec ~/.local/bin/term -e nvim
 bindsym $mod+Shift+e exec emacsclient --alternate-editor='' --create-frame --no-wait
 bindsym $mod+w exec firefox
 bindsym $mod+Shift+w exec google-chrome-stable
