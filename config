@@ -36,10 +36,10 @@ gaps inner 16
 gaps outer 8
 
 # Borders
-default_border normal 0
-default_floating_border normal 4
+default_border normal 1
+default_floating_border normal 1
 # Force the border to any windows including ones with client-side decorations
-for_window [class=".*"] border normal 0
+for_window [class=".*"] border normal 1
 for_window [class=".*"] title_format "<span size='small' weight='regular'>   %title</span>"
 
 # use Mouse+$mod to drag floating windows to their wanted position
