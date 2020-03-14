@@ -218,14 +218,16 @@ for_window [class="^Pavucontrol"]                           floating enable
 for_window [class="^Vncviewer"]                             floating enable
 for_window [class="^Stardict$"]                             floating enable
 for_window [class="^Minecraft"]                             floating enable
+for_window [class="minecraft-launcher"]                     floating enable
 for_window [window_role="gnome-terminal-preferences"]       floating enable
 for_window [window_role="gnome-terminal-profile-editor"]    floating enable
 for_window [class="^net-minecraft-bootstrap-Bootstrap$"]    floating enable
-for_window [title="^crx_knipolnnllmklapflnccelgolnpehhpl$"] floating enable
+# Authy (Chrome App)
+for_window [instance="^crx_gaedmjdfmmahhbjefcbgaolhhanlaolb$"] floating enable
 for_window [class="^Firefox$" instance="^(?!Navigator$)"]   floating enable
 for_window [window_role="pop-up"]                           floating enable
 for_window [class="^Pinentry$"]                             floating enable
-for_window [class="^Slack$"]                                floating enable, move scratchpad, scratchpad show
+#for_window [class="^Slack$"]                                floating enable, move scratchpad, scratchpad show
 
 # Focus on window activation
 focus_on_window_activation urgent
