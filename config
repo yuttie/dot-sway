@@ -228,6 +228,7 @@ for_window [class="^Firefox$" instance="^(?!Navigator$)"]   floating enable
 for_window [window_role="pop-up"]                           floating enable
 for_window [class="^Pinentry$"]                             floating enable
 #for_window [class="^Slack$"]                                floating enable, move scratchpad, scratchpad show
+for_window [class="^Gnome-calculator$"]                     floating enable
 
 # Focus on window activation
 focus_on_window_activation urgent
