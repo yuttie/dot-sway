@@ -160,9 +160,9 @@ bindsym $mod+Shift+Control+Up move workspace to output up
 bindsym $mod+Shift+Control+Right move workspace to output right
 
 # switch or move focused container to dynamically selected workspace
-bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace"`
-bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w["name"]) }' | rofi -dmenu -p "workspace"`
-bindsym $mod+Shift+m exec "w=$(i3-msg -t get_workspaces | ruby -r json -e 'JSON.parse(STDIN.read).each {|w| puts(w[\\"name\\"]) }' | rofi -dmenu -p 'workspace'); i3-msg \\"move container to workspace $w; workspace $w\\""
+bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | jq -r '.[].name' | rofi -dmenu -p "workspace"`
+bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | jq -r '.[].name' | rofi -dmenu -p "workspace"`
+bindsym $mod+Shift+m exec "w=$(i3-msg -t get_workspaces | jq -r '.[].name' | rofi -dmenu -p 'workspace'); i3-msg \\"move container to workspace $w; workspace $w\\""
 
 # Lock
 bindsym $mod+Control+x exec xautolock -locknow
