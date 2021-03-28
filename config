@@ -10,11 +10,11 @@ font pango:Sans 16
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #35363a #35363a #ffffff #35363a   #35363a
-client.focused_inactive #35363a #35363a #cdcdce #202124   #202124
-client.unfocused        #202124 #202124 #a7abae #202124   #202124
-client.urgent           #602022 #602022 #d9828c #602022   #602022
-client.placeholder      #000000 #000000 #212121 #202124   #000000
+client.focused          #3a4164 #3a4164 #e4e5ed #3a4164   #3a4164
+client.focused_inactive #40424f #40424f #c6c8d1 #40424f   #40424f
+client.unfocused        #151821 #151821 #8e92a4 #151821   #151821
+client.urgent           #f44336 #f44336 #000000 #f44336   #f44336
+client.placeholder      #000000 #000000 #212121 #151821   #000000
 client.background       #ffffff
 
 # Before i3 v4.8, we used to recommend this one as the default:
@@ -36,10 +36,10 @@ gaps inner 16
 gaps outer 0
 
 # Borders
-default_border normal 1
-default_floating_border normal 1
+default_border normal 2
+default_floating_border normal 2
 # Force the border to any windows including ones with client-side decorations
-for_window [class=".*"] border normal 1
+for_window [class=".*"] border normal 2
 for_window [class=".*"] title_format "<span size='xx-small' weight='regular'>   %title</span>"
 
 # use Mouse+$mod to drag floating windows to their wanted position
