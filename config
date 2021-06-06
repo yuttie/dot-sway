@@ -13,7 +13,7 @@ font pango:Sans 16
 client.focused          #3a4164 #3a4164 #e4e5ed #3a4164   #3a4164
 client.focused_inactive #40424f #40424f #c6c8d1 #40424f   #40424f
 client.unfocused        #151821 #151821 #8e92a4 #151821   #151821
-client.urgent           #46202d #46202d #000000 #46202d   #46202d
+client.urgent           #46202d #46202d #ffffff #46202d   #46202d
 client.placeholder      #000000 #000000 #212121 #151821   #000000
 client.background       #ffffff
 
