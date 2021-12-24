@@ -59,24 +59,24 @@ bindsym --border --exclude-titlebar button1 nop
 bindsym --border --exclude-titlebar button3 nop
 
 # start a terminal
-bindsym $mod+semicolon exec ~/.local/bin/term
-bindsym $mod+e exec ~/.local/bin/term -e nvim
-bindsym $mod+Shift+e exec emacsclient --alternate-editor='' --create-frame --no-wait
-bindsym $mod+w exec google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode
-bindsym $mod+Shift+w exec firefox
-bindsym $mod+Print exec "scrot screen_%Y-%m-%d-%H-%M-%S.png; notify-send --icon=shutter --expire-time=1500 i3 'Screen captured.'"
-bindsym $mod+Control+Print exec "scrot window_%Y-%m-%d-%H-%M-%S.png -u; notify-send --icon=shutter --expire-time=1500 i3 'Window captured.'"
-bindsym --release $mod+Shift+Print exec "import region.png; notify-send --icon=shutter --expire-time=1500 i3 'Region captured.'"
+bindsym $mod+semicolon exec --no-startup-id ~/.local/bin/term
+bindsym $mod+e exec --no-startup-id ~/.local/bin/term -e nvim
+bindsym $mod+Shift+e exec --no-startup-id emacsclient --alternate-editor='' --create-frame --no-wait
+bindsym $mod+w exec --no-startup-id google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode
+bindsym $mod+Shift+w exec --no-startup-id firefox
+bindsym $mod+Print exec --no-startup-id "scrot screen_%Y-%m-%d-%H-%M-%S.png; notify-send --icon=shutter --expire-time=1500 i3 'Screen captured.'"
+bindsym $mod+Control+Print exec --no-startup-id "scrot window_%Y-%m-%d-%H-%M-%S.png -u; notify-send --icon=shutter --expire-time=1500 i3 'Window captured.'"
+bindsym --release $mod+Shift+Print exec --no-startup-id "import region.png; notify-send --icon=shutter --expire-time=1500 i3 'Region captured.'"
 
 # kill focused window
 bindsym $mod+Control+c kill
 
 # start a program launcher
-bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -modi drun#run -show drun -show-icons -drun-show-actions
-bindsym $mod+c exec python3.7 ~/.i3/quick-command
-bindsym $mod+Shift+n exec ~/.i3/edit-note.sh
-bindsym $mod+Shift+d exec xdg-open `find ~/ -type f -regextype posix-extended -iregex '.+\.(pdf|docx?|xlsx?)$' | rofi -dmenu -i -p "open a document"`
-bindsym $mod+Control+d exec /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
+bindsym $mod+r exec --no-startup-id env PATH=$HOME/.local/bin:$PATH rofi -modi drun#run -show drun -show-icons -drun-show-actions
+bindsym $mod+c exec --no-startup-id python3.7 ~/.i3/quick-command
+bindsym $mod+Shift+n exec --no-startup-id ~/.i3/edit-note.sh
+bindsym $mod+Shift+d exec --no-startup-id xdg-open `find ~/ -type f -regextype posix-extended -iregex '.+\.(pdf|docx?|xlsx?)$' | rofi -dmenu -i -p "open a document"`
+bindsym $mod+Control+d exec --no-startup-id /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
 
 # change focus
 bindsym $mod+$left focus left
@@ -90,8 +90,8 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $mod+n exec python3.7 ~/.i3/i3-focus next-window
-bindsym $mod+p exec python3.7 ~/.i3/i3-focus prev-window
+bindsym $mod+n exec --no-startup-id python3.7 ~/.i3/i3-focus next-window
+bindsym $mod+p exec --no-startup-id python3.7 ~/.i3/i3-focus prev-window
 
 # move focused window
 bindsym $mod+Shift+$left move left
@@ -142,7 +142,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Sort workspaces
-bindsym $mod+Control+s exec python3.7 ~/.i3/i3-sort-ws; exec notify-send --icon=view-sort-ascending-symbolic --expire-time=3000 i3 'Workspaces sorted.'
+bindsym $mod+Control+s exec --no-startup-id python3.7 ~/.i3/i3-sort-ws; exec --no-startup-id notify-send --icon=view-sort-ascending-symbolic --expire-time=3000 i3 'Workspaces sorted.'
 
 # switch to another workspace
 bindsym $mod+bracketleft workspace prev_on_output
@@ -167,18 +167,18 @@ bindsym $mod+Shift+Control+Up move workspace to output up
 bindsym $mod+Shift+Control+Right move workspace to output right
 
 # switch or move focused container to dynamically selected workspace
-bindsym $mod+v exec i3-msg workspace `i3-msg -t get_workspaces | jq -r '.[].name' | rofi -dmenu -p "workspace"`
-bindsym $mod+m exec i3-msg move container to workspace `i3-msg -t get_workspaces | jq -r '.[].name' | rofi -dmenu -p "workspace"`
-bindsym $mod+Shift+m exec "w=$(i3-msg -t get_workspaces | jq -r '.[].name' | rofi -dmenu -p 'workspace'); i3-msg \\"move container to workspace $w; workspace $w\\""
+bindsym $mod+v exec --no-startup-id i3-msg workspace `i3-msg -t get_workspaces | jq -r '.[].name' | rofi -dmenu -p "workspace"`
+bindsym $mod+m exec --no-startup-id i3-msg move container to workspace `i3-msg -t get_workspaces | jq -r '.[].name' | rofi -dmenu -p "workspace"`
+bindsym $mod+Shift+m exec --no-startup-id "w=$(i3-msg -t get_workspaces | jq -r '.[].name' | rofi -dmenu -p 'workspace'); i3-msg \\"move container to workspace $w; workspace $w\\""
 
 # Lock
-bindsym $mod+Control+x exec xautolock -locknow
+bindsym $mod+Control+x exec --no-startup-id xautolock -locknow
 # reload the configuration file
-bindsym $mod+Control+r reload; exec notify-send --icon=system-run-symbolic --expire-time=3000 i3 'Configuration reloaded.'
+bindsym $mod+Control+r reload; exec --no-startup-id notify-send --icon=system-run-symbolic --expire-time=3000 i3 'Configuration reloaded.'
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Control+Shift+r exec "i3-msg restart; notify-send --icon=system-restart-symbolic --expire-time=3000 i3 'Restarted.'"
+bindsym $mod+Control+Shift+r exec --no-startup-id "i3-msg restart; notify-send --icon=system-restart-symbolic --expire-time=3000 i3 'Restarted.'"
 # exit i3 (logs you out of your X session)
-bindsym $mod+Control+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Control+q exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
