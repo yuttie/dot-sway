@@ -74,12 +74,15 @@ bindsym $mod+Shift+5 exec --no-startup-id "qdbus org.kde.Spectacle / Rectangular
 # kill focused window
 bindsym $mod+Control+c kill
 
-# start a program launcher
+# Launching programs
 bindsym $mod+r exec --no-startup-id env PATH=$HOME/.local/bin:$PATH rofi -modi drun#run -show drun -show-icons -drun-show-actions
 bindsym $mod+c exec --no-startup-id python ~/.i3/quick-command
-bindsym $mod+Shift+n exec --no-startup-id ~/.i3/edit-note.sh
-bindsym $mod+Shift+d exec --no-startup-id xdg-open `find ~/ -type f -regextype posix-extended -iregex '.+\.(pdf|docx?|xlsx?)$' | rofi -dmenu -i -p "open a document"`
 bindsym $mod+Control+d exec --no-startup-id /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
+
+# Rofi
+bindsym $mod+Shift+d exec --no-startup-id xdg-open "$(find ~/ -type d -path '*/.*' -prune -o -type d -print | rofi -dmenu -i -p 'Open a directory')"
+bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/term --working-directory "$(find ~/ -type d -path '*/.*' -prune -o -type d -print | rofi -dmenu -i -p 'Open a terminal with a directory')"
+bindsym $mod+Shift+p exec --no-startup-id xdg-open "$(find ~/Literature -type d -path '*/.*' -prune -o -type f -iname '*.pdf' -print | rofi -dmenu -i -p "Open a paper")"
 
 # change focus
 bindsym $mod+$left focus left
