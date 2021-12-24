@@ -76,7 +76,7 @@ bindsym $mod+Control+c kill
 
 # start a program launcher
 bindsym $mod+r exec --no-startup-id env PATH=$HOME/.local/bin:$PATH rofi -modi drun#run -show drun -show-icons -drun-show-actions
-bindsym $mod+c exec --no-startup-id python3.7 ~/.i3/quick-command
+bindsym $mod+c exec --no-startup-id python ~/.i3/quick-command
 bindsym $mod+Shift+n exec --no-startup-id ~/.i3/edit-note.sh
 bindsym $mod+Shift+d exec --no-startup-id xdg-open `find ~/ -type f -regextype posix-extended -iregex '.+\.(pdf|docx?|xlsx?)$' | rofi -dmenu -i -p "open a document"`
 bindsym $mod+Control+d exec --no-startup-id /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
@@ -93,8 +93,8 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $mod+n exec --no-startup-id python3.7 ~/.i3/i3-focus next-window
-bindsym $mod+p exec --no-startup-id python3.7 ~/.i3/i3-focus prev-window
+bindsym $mod+n exec --no-startup-id python ~/.i3/i3-focus next-window
+bindsym $mod+p exec --no-startup-id python ~/.i3/i3-focus prev-window
 
 # move focused window
 bindsym $mod+Shift+$left move left
@@ -145,7 +145,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Sort workspaces
-bindsym $mod+Control+s exec --no-startup-id python3.7 ~/.i3/i3-sort-ws; exec --no-startup-id notify-send --icon=view-sort-ascending-symbolic --expire-time=3000 i3 'Workspaces sorted.'
+bindsym $mod+Control+s exec --no-startup-id python ~/.i3/i3-sort-ws; exec --no-startup-id notify-send --icon=view-sort-ascending-symbolic --expire-time=3000 i3 'Workspaces sorted.'
 
 # switch to another workspace
 bindsym $mod+bracketleft workspace prev_on_output
