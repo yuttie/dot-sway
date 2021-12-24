@@ -60,10 +60,8 @@ bindsym --border --exclude-titlebar button3 nop
 
 # start a terminal
 bindsym $mod+semicolon exec --no-startup-id ~/.local/bin/term
-bindsym $mod+e exec --no-startup-id ~/.local/bin/term -e nvim
-bindsym $mod+Shift+e exec --no-startup-id emacsclient --alternate-editor='' --create-frame --no-wait
-bindsym $mod+w exec --no-startup-id google-chrome-stable --enable-features=WebUIDarkMode --force-dark-mode
-bindsym $mod+Shift+w exec --no-startup-id firefox
+bindsym $mod+e         exec --no-startup-id ~/.local/bin/term -e nvim
+bindsym $mod+w         exec --no-startup-id ~/.local/bin/google-chrome-stable
 
 # Screen capture
 bindsym $mod+Print     exec --no-startup-id "maim -u ~/Pictures/screen_$(date +%Y-%m-%d-%H%M%S).png; notify-send --icon=shutter --expire-time=1500 i3 'Screen captured.'"
