@@ -186,6 +186,11 @@ bindsym $mod+Control+Shift+r exec --no-startup-id "i3-msg restart; notify-send -
 # exit i3 (logs you out of your X session)
 bindsym $mod+Control+q exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# Display layouts
+bindsym $mod+F1 exec --no-startup-id ~/.screenlayout/display-layout-1.sh; exec --no-startup-id $HOME/.config/polybar/launch.sh
+bindsym $mod+F2 exec --no-startup-id ~/.screenlayout/display-layout-2.sh; exec --no-startup-id $HOME/.config/polybar/launch.sh
+bindsym $mod+F3 exec --no-startup-id ~/.screenlayout/display-layout-3.sh; exec --no-startup-id $HOME/.config/polybar/launch.sh
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
