@@ -49,7 +49,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # Enable window icons for all windows
-for_window [all] title_window_icon on
+for_window [all] title_window_icon padding 2px
 
 # The middle button over a titlebar kills the window
 bindsym --release button2 kill
