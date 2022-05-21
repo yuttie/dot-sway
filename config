@@ -20,7 +20,7 @@ font pango:Sans 12
 # Colors without picom
 # class                 border     background text       indicator  child_border
 client.focused          #8badc1    #8badc1    #ffffff    #ffffff    #8badc1
-client.focused_inactive #6a96af    #6a96af    #40424f    #ffffff    #6a96af
+client.focused_inactive #6a96af    #6a96af    #b9ccdf    #ffffff    #6a96af
 client.unfocused        #6a96af    #6a96af    #40424f    #ffffff    #6a96af
 client.urgent           #ff0000    #ff0000    #40424f    #ff0000    #6a96af
 client.placeholder      #6a96af    #6a96af    #40424f    #ffffff    #6a96af
