@@ -80,9 +80,9 @@ bindsym $mod+c exec --no-startup-id python ~/.i3/quick-command
 bindsym $mod+Control+d exec --no-startup-id /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
 
 # Rofi
-bindsym $mod+Shift+d exec --no-startup-id xdg-open                              "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a directory' | sed -e "s#^~#$HOME#")"
-bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/term --working-directory "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a terminal with a directory' | sed -e "s#^~#$HOME#")"
-bindsym $mod+Shift+p exec --no-startup-id xdg-open                              "$(fd --type f '\.pdf$' ~/Literature | sed -e "s#^$HOME/Literature/##" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "Open a paper" | sed -e "s#^#$HOME/Literature/#")"
+bindsym $mod+Shift+d exec --no-startup-id ~/.local/bin/run-if-some "xdg-open"                                  "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a directory' | sed -e "s#^~#$HOME#")"
+bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/run-if-some "$HOME/.local/bin/term --working-directory" "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a terminal with a directory' | sed -e "s#^~#$HOME#")"
+bindsym $mod+Shift+p exec --no-startup-id ~/.local/bin/run-if-some "xdg-open"                                  "$(fd --type f '\.pdf$' ~/Literature | sed -e "s#^$HOME/Literature/##" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "Open a paper" | sed -e "s#^#$HOME/Literature/#")"
 
 # change focus
 bindsym $mod+$left focus left
