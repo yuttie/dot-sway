@@ -84,6 +84,11 @@ bindsym $mod+Shift+d exec --no-startup-id ~/.local/bin/run-if-some "xdg-open"   
 bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/run-if-some "$HOME/.local/bin/term --working-directory" "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a terminal with a directory' | sed -e "s#^~#$HOME#")"
 bindsym $mod+Shift+p exec --no-startup-id ~/.local/bin/run-if-some "xdg-open"                                  "$(fd --type f '\.pdf$' ~/Literature | sed -e "s#^$HOME/Literature/##" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "Open a paper" | sed -e "s#^#$HOME/Literature/#")"
 
+# Dunst
+bindsym $mod+Control+n exec --no-startup-id dunstctl set-paused toggle
+bindsym $mod+Shift+c exec --no-startup-id dunstctl close
+bindsym $mod+Shift+u exec --no-startup-id dunstctl history-pop
+
 # change focus
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
