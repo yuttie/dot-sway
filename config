@@ -1,3 +1,15 @@
+input "type:keyboard" {
+    xkb_layout "jp"
+    xkb_variant "dvorak"
+    xkb_options "ctrl:nocaps,mod:custom"
+    repeat_delay 300
+    repeat_rate 60
+}
+
+output * scale 1
+
+output * bg ~/wallpaper.jpg stretch
+
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -56,9 +68,6 @@ floating_modifier $mod
 
 # Don't let focus follow a mouse cursor
 focus_follows_mouse no
-
-# Enable window icons for all windows
-for_window [all] title_window_icon padding 2px
 
 # The middle button over a titlebar kills the window
 bindsym --release button2 kill
@@ -275,5 +284,14 @@ for_window [class="^kmag$"]                            floating enable
 focus_on_window_activation urgent
 
 # Start applications
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-#exec_always --no-startup-id $HOME/dotfiles/launch-compton.sh
+exec_always --no-startup-id killall fcitx5
+exec_always --no-startup-id killall waybar
+exec_always --no-startup-id killall swayidle
+
+exec_always --no-startup-id fcitx5 -dr
+exec_always --no-startup-id waybar
+exec_always --no-startup-id swayidle -w \
+    timeout 300 'swaylock -f -c 000000' \
+    timeout 305 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -f -c 000000'
