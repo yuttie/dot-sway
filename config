@@ -201,7 +201,7 @@ bindsym $mod+m exec --no-startup-id i3-msg move container to workspace `i3-msg -
 bindsym $mod+Shift+m exec --no-startup-id "w=$(i3-msg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'workspace'); i3-msg \\"move container to workspace $w; workspace $w\\""
 
 # Lock
-bindsym $mod+Control+x exec --no-startup-id xautolock -locknow
+bindsym $mod+Control+x exec --no-startup-id pkill -USR1 swayidle
 # reload the configuration file
 bindsym $mod+Control+r reload; exec --no-startup-id notify-send --icon=system-run-symbolic --expire-time=3000 i3 'Configuration reloaded.'
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
