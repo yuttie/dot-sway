@@ -246,7 +246,7 @@ for_window [app_id="org.gnome.Calculator"] floating enable
 # Focus on window activation
 focus_on_window_activation urgent
 
-# Start applications
+# Autostart
 exec --no-startup-id xrdb -load ~/.Xresources
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
