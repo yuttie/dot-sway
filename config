@@ -284,6 +284,8 @@ for_window [class="^kmag$"]                            floating enable
 focus_on_window_activation urgent
 
 # Start applications
+exec xrdb -load ~/.Xresources
+
 exec_always --no-startup-id killall fcitx5
 exec_always --no-startup-id killall waybar
 exec_always --no-startup-id killall swayidle
