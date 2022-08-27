@@ -247,7 +247,11 @@ for_window [app_id="org.gnome.Calculator"] floating enable
 focus_on_window_activation urgent
 
 # Start applications
-exec xrdb -load ~/.Xresources
+exec --no-startup-id xrdb -load ~/.Xresources
+exec --no-startup-id pasystray
+exec --no-startup-id nm-applet
+exec --no-startup-id blueman-tray
+exec --no-startup-id dropbox
 
 exec_always --no-startup-id killall fcitx5
 exec_always --no-startup-id killall waybar
