@@ -195,7 +195,7 @@ bindsym $mod+Shift+Control+Right move workspace to output right
 # switch or move focused container to dynamically selected workspace
 bindsym $mod+v exec --no-startup-id i3-msg workspace `i3-msg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "workspace"`
 bindsym $mod+m exec --no-startup-id i3-msg move container to workspace `i3-msg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "workspace"`
-bindsym $mod+Shift+m exec --no-startup-id "w=$(i3-msg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'workspace'); i3-msg \\"move container to workspace $w; workspace $w\\""
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/sway/move-to-and-focus-workspace
 
 # Lock
 bindsym $mod+Control+x exec --no-startup-id pkill -USR1 swayidle

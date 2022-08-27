@@ -1,0 +1,4 @@
+#!/bin/sh
+w=$(swaymsg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'workspace')
+swaymsg "move container to workspace $w"
+swaymsg "workspace $w"
