@@ -70,7 +70,7 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # The middle button over a titlebar kills the window
-bindsym --release button2 kill
+bindsym button2 kill
 
 # Disable resizing by dragging the border
 bindsym --border --exclude-titlebar button1 nop
