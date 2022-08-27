@@ -19,4 +19,6 @@ export QT5_IM_MODULE=fcitx
 export SDL_IM_MODULE=fcitx
 export GLFW_IM_MODULE=ibus
 
+eval $(gnome-keyring-daemon --start --components=pkcs11,secrets)
+
 exec sway
