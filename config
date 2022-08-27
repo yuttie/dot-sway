@@ -119,9 +119,6 @@ bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-bindsym $mod+n exec --no-startup-id python ~/.i3/i3-focus next-window
-bindsym $mod+p exec --no-startup-id python ~/.i3/i3-focus prev-window
-
 # move focused window
 bindsym $mod+Shift+$left move left 64 px
 bindsym $mod+Shift+$down move down 64 px
