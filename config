@@ -248,6 +248,7 @@ focus_on_window_activation urgent
 
 # Autostart
 exec --no-startup-id xrdb -load ~/.Xresources
+exec --no-startup-id dunst
 exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-tray
