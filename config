@@ -93,7 +93,7 @@ bindsym $mod+Control+c kill
 
 # Launching programs
 bindsym $mod+r exec --no-startup-id env PATH=$HOME/.local/bin:$PATH rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -modi drun#run -show drun -show-icons -drun-show-actions
-bindsym $mod+c exec --no-startup-id python ~/.i3/quick-command
+bindsym $mod+c exec --no-startup-id python ~/.config/sway/quick-command
 bindsym $mod+Control+d exec --no-startup-id /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
 
 # Rofi
@@ -167,7 +167,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Sort workspaces
-bindsym $mod+Control+s exec --no-startup-id python ~/.i3/i3-sort-ws; exec --no-startup-id notify-send --icon=view-sort-ascending-symbolic --expire-time=3000 i3 'Workspaces sorted.'
+bindsym $mod+Control+s exec --no-startup-id python ~/.config/sway/i3-sort-ws; exec --no-startup-id notify-send --icon=view-sort-ascending-symbolic --expire-time=3000 i3 'Workspaces sorted.'
 
 # switch to another workspace
 bindsym $mod+comma workspace prev_on_output
