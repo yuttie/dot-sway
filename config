@@ -77,8 +77,8 @@ bindsym --border --exclude-titlebar button1 nop
 bindsym --border --exclude-titlebar button3 nop
 
 # start a terminal
-bindsym $mod+semicolon exec --no-startup-id ~/.local/bin/term
-bindsym $mod+e         exec --no-startup-id ~/.local/bin/term -e nvim
+bindsym $mod+semicolon exec --no-startup-id ~/.local/bin/term start --always-new-process
+bindsym $mod+e         exec --no-startup-id ~/.local/bin/term start --always-new-process -- nvim
 bindsym $mod+w         exec --no-startup-id ~/.local/bin/google-chrome-stable
 
 # Screen capture
