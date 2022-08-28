@@ -2,6 +2,7 @@ input "type:keyboard" {
     xkb_layout "jp"
     xkb_variant "dvorak"
     xkb_options "ctrl:nocaps,mod:custom"
+    xkb_numlock enable
     repeat_delay 300
     repeat_rate 60
 }
