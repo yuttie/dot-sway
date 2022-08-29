@@ -239,6 +239,7 @@ bindsym $mod+Shift+r mode "resize"
 
 # Make specific windows floating by default
 for_window [app_id="org.gnome.Calculator"] floating enable
+for_window [app_id="wdisplays"] floating enable
 
 # Focus on window activation
 focus_on_window_activation urgent
