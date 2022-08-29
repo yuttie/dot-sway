@@ -259,6 +259,8 @@ exec_always --no-startup-id killall swayidle
 exec_always --no-startup-id fcitx5 -dr
 exec_always --no-startup-id waybar
 exec_always --no-startup-id swayidle -w \
+    timeout 10  'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
+         resume 'swaymsg "output * dpms on"' \
     timeout 300 'swaylock -f -e -c 000000' \
     timeout 305 'swaymsg "output * dpms off"' \
          resume 'swaymsg "output * dpms on"' \
