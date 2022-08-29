@@ -245,6 +245,8 @@ for_window [app_id="wdisplays"] floating enable
 focus_on_window_activation urgent
 
 # Autostart
+exec --no-startup-id tmux setenv -g SWAYSOCK "$SWAYSOCK"
+exec --no-startup-id tmux setenv -g I3SOCK "$I3SOCK"
 exec --no-startup-id xrdb -load ~/.Xresources
 exec --no-startup-id dunst
 exec --no-startup-id pasystray
