@@ -258,8 +258,8 @@ exec_always --no-startup-id killall swayidle
 exec_always --no-startup-id fcitx5 -dr
 exec_always --no-startup-id waybar
 exec_always --no-startup-id swayidle -w \
-    timeout 300 'dunstctl set-paused true; swaylock -f -c 000000' \
+    timeout 300 'dunstctl set-paused true; swaylock -f -e -c 000000' \
          resume 'dunstctl set-paused false' \
     timeout 305 'swaymsg "output * dpms off"' \
          resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock -f -c 000000'
+    before-sleep 'swaylock -f -e -c 000000'
