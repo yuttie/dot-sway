@@ -198,7 +198,7 @@ bindsym $mod+m exec --no-startup-id swaymsg move container to workspace `swaymsg
 bindsym $mod+Shift+m exec --no-startup-id ~/.config/sway/move-to-and-focus-workspace
 
 # Lock
-bindsym $mod+Control+x exec --no-startup-id pkill -USR1 swayidle
+bindsym $mod+Control+x exec --no-startup-id swaylock -f -e -c 000000
 # reload the configuration file
 bindsym $mod+Control+r reload; exec --no-startup-id notify-send --icon=system-run-symbolic --expire-time=3000 i3 'Configuration reloaded.'
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
