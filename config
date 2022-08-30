@@ -255,7 +255,7 @@ exec --no-startup-id tmux setenv -g I3SOCK "$I3SOCK"
 exec --no-startup-id xrdb -load ~/.Xresources
 exec --no-startup-id dunst
 exec --no-startup-id pasystray
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet --indicator
 exec --no-startup-id blueman-tray
 exec --no-startup-id dropbox
 
