@@ -249,9 +249,13 @@ for_window [app_id="wdisplays"] floating enable
 # Focus on window activation
 focus_on_window_activation urgent
 
-# Autostart
+# Update environment variables
+exec --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+# exec --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec --no-startup-id tmux setenv -g SWAYSOCK "$SWAYSOCK"
 exec --no-startup-id tmux setenv -g I3SOCK "$I3SOCK"
+
+# Autostart
 exec --no-startup-id xrdb -load ~/.Xresources
 exec --no-startup-id dunst
 exec --no-startup-id pasystray
