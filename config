@@ -7,6 +7,14 @@ input type:keyboard {
     repeat_rate 60
 }
 
+input type:touchpad {
+    tap enabled
+    natural_scroll enabled
+    drag enabled
+    drag_lock enabled
+    dwt enabled
+}
+
 output * adaptive_sync on
 
 output * scale 1
