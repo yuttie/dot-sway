@@ -268,7 +268,7 @@ exec xrdb -load ~/.Xresources
 exec dunst
 exec pasystray
 exec nm-applet --indicator
-exec blueman-tray
+exec blueman-applet
 exec dropbox
 
 exec_always killall fcitx5
