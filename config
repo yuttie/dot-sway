@@ -91,34 +91,34 @@ bindsym --border --exclude-titlebar button1 nop
 bindsym --border --exclude-titlebar button3 nop
 
 # start a terminal
-bindsym $mod+semicolon exec --no-startup-id ~/.local/bin/term start --always-new-process
-bindsym $mod+e         exec --no-startup-id ~/.local/bin/term start --always-new-process -- nvim
-bindsym $mod+w         exec --no-startup-id ~/.local/bin/google-chrome-stable
+bindsym $mod+semicolon exec ~/.local/bin/term start --always-new-process
+bindsym $mod+e         exec ~/.local/bin/term start --always-new-process -- nvim
+bindsym $mod+w         exec ~/.local/bin/google-chrome-stable
 
 # Screen capture
-bindsym Print               exec --no-startup-id "grimshot --notify save screen ~/Pictures/screen_$(date +%Y-%m-%d-%H%M%S).png"
-bindsym Mod1+Print          exec --no-startup-id "grimshot --notify save output ~/Pictures/output_$(date +%Y-%m-%d-%H%M%S).png"
-bindsym Shift+Print         exec --no-startup-id "grimshot --notify save active ~/Pictures/active_$(date +%Y-%m-%d-%H%M%S).png"
-bindsym Control+Shift+Print exec --no-startup-id "grimshot --notify save window ~/Pictures/window_$(date +%Y-%m-%d-%H%M%S).png"
-bindsym Control+Print       exec --no-startup-id "grimshot --notify save area ~/Pictures/area_$(date +%Y-%m-%d-%H%M%S).png"
+bindsym Print               exec "grimshot --notify save screen ~/Pictures/screen_$(date +%Y-%m-%d-%H%M%S).png"
+bindsym Mod1+Print          exec "grimshot --notify save output ~/Pictures/output_$(date +%Y-%m-%d-%H%M%S).png"
+bindsym Shift+Print         exec "grimshot --notify save active ~/Pictures/active_$(date +%Y-%m-%d-%H%M%S).png"
+bindsym Control+Shift+Print exec "grimshot --notify save window ~/Pictures/window_$(date +%Y-%m-%d-%H%M%S).png"
+bindsym Control+Print       exec "grimshot --notify save area ~/Pictures/area_$(date +%Y-%m-%d-%H%M%S).png"
 
 # kill focused window
 bindsym $mod+Control+c kill
 
 # Launching programs
-bindsym $mod+r exec --no-startup-id env PATH=$HOME/.local/bin:$PATH rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -modi drun#run -show drun -show-icons -drun-show-actions
-bindsym $mod+c exec --no-startup-id python ~/.config/sway/quick-command
-bindsym $mod+Control+d exec --no-startup-id /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
+bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -modi drun#run -show drun -show-icons -drun-show-actions
+bindsym $mod+c exec python ~/.config/sway/quick-command
+bindsym $mod+Control+d exec /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
 
 # Rofi
-bindsym $mod+Shift+d exec --no-startup-id ~/.local/bin/run-if-some "nemo"                                      "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a directory' | sed -e "s#^~#$HOME#")"
-bindsym $mod+Shift+t exec --no-startup-id ~/.local/bin/run-if-some "$HOME/.local/bin/term start --always-new-process --cwd" "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a terminal with a directory' | sed -e "s#^~#$HOME#")"
-bindsym $mod+Shift+p exec --no-startup-id ~/.local/bin/run-if-some "xdg-open"                                  "$(fd --type f '\.pdf$' ~/Literature | sed -e "s#^$HOME/Literature/##" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "Open a paper" | sed -e "s#^#$HOME/Literature/#")"
+bindsym $mod+Shift+d exec ~/.local/bin/run-if-some "nemo"                                      "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a directory' | sed -e "s#^~#$HOME#")"
+bindsym $mod+Shift+t exec ~/.local/bin/run-if-some "$HOME/.local/bin/term start --always-new-process --cwd" "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a terminal with a directory' | sed -e "s#^~#$HOME#")"
+bindsym $mod+Shift+p exec ~/.local/bin/run-if-some "xdg-open"                                  "$(fd --type f '\.pdf$' ~/Literature | sed -e "s#^$HOME/Literature/##" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "Open a paper" | sed -e "s#^#$HOME/Literature/#")"
 
 # Dunst
-bindsym $mod+Control+n exec --no-startup-id dunstctl set-paused toggle
-bindsym $mod+Shift+c exec --no-startup-id dunstctl close
-bindsym $mod+Shift+u exec --no-startup-id dunstctl history-pop
+bindsym $mod+Control+n exec dunstctl set-paused toggle
+bindsym $mod+Shift+c exec dunstctl close
+bindsym $mod+Shift+u exec dunstctl history-pop
 
 # change focus
 bindsym $mod+$left focus left
@@ -181,7 +181,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 # Sort workspaces
-bindsym $mod+Control+s exec --no-startup-id python ~/.config/sway/i3-sort-ws; exec --no-startup-id notify-send --icon=view-sort-ascending-symbolic --expire-time=3000 i3 'Workspaces sorted.'
+bindsym $mod+Control+s exec python ~/.config/sway/i3-sort-ws; exec notify-send --icon=view-sort-ascending-symbolic --expire-time=3000 i3 'Workspaces sorted.'
 
 # switch to another workspace
 bindsym $mod+comma workspace prev_on_output
@@ -206,23 +206,23 @@ bindsym $mod+Shift+Control+Up move workspace to output up
 bindsym $mod+Shift+Control+Right move workspace to output right
 
 # switch or move focused container to dynamically selected workspace
-bindsym $mod+v exec --no-startup-id swaymsg workspace `swaymsg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "workspace"`
-bindsym $mod+m exec --no-startup-id swaymsg move container to workspace `swaymsg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "workspace"`
-bindsym $mod+Shift+m exec --no-startup-id ~/.config/sway/move-to-and-focus-workspace
+bindsym $mod+v exec swaymsg workspace `swaymsg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "workspace"`
+bindsym $mod+m exec swaymsg move container to workspace `swaymsg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "workspace"`
+bindsym $mod+Shift+m exec ~/.config/sway/move-to-and-focus-workspace
 
 # Lock
-bindsym $mod+Control+x exec --no-startup-id swaylock -f -e -c 000000
+bindsym $mod+Control+x exec swaylock -f -e -c 000000
 # reload the configuration file
-bindsym $mod+Control+r reload; exec --no-startup-id notify-send --icon=system-run-symbolic --expire-time=3000 i3 'Configuration reloaded.'
+bindsym $mod+Control+r reload; exec notify-send --icon=system-run-symbolic --expire-time=3000 i3 'Configuration reloaded.'
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Control+Shift+r exec --no-startup-id "swaymsg restart; notify-send --icon=system-restart-symbolic --expire-time=3000 i3 'Restarted.'"
+bindsym $mod+Control+Shift+r exec "swaymsg restart; notify-send --icon=system-restart-symbolic --expire-time=3000 i3 'Restarted.'"
 # exit i3 (logs you out of your X session)
-bindsym $mod+Control+q exec --no-startup-id swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Control+q exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 
 # Display layouts
-bindsym $mod+F1 exec --no-startup-id ~/.screenlayout/display-layout-1.sh; exec --no-startup-id $HOME/.config/polybar/launch.sh
-bindsym $mod+F2 exec --no-startup-id ~/.screenlayout/display-layout-2.sh; exec --no-startup-id $HOME/.config/polybar/launch.sh
-bindsym $mod+F3 exec --no-startup-id ~/.screenlayout/display-layout-3.sh; exec --no-startup-id $HOME/.config/polybar/launch.sh
+bindsym $mod+F1 exec ~/.screenlayout/display-layout-1.sh; exec $HOME/.config/polybar/launch.sh
+bindsym $mod+F2 exec ~/.screenlayout/display-layout-2.sh; exec $HOME/.config/polybar/launch.sh
+bindsym $mod+F3 exec ~/.screenlayout/display-layout-3.sh; exec $HOME/.config/polybar/launch.sh
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -258,26 +258,26 @@ for_window [app_id="wdisplays"] floating enable
 focus_on_window_activation urgent
 
 # Update environment variables
-exec --no-startup-id dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
-# exec --no-startup-id systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-exec --no-startup-id tmux setenv -g SWAYSOCK "$SWAYSOCK"
-exec --no-startup-id tmux setenv -g I3SOCK "$I3SOCK"
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+# exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec tmux setenv -g SWAYSOCK "$SWAYSOCK"
+exec tmux setenv -g I3SOCK "$I3SOCK"
 
 # Autostart
-exec --no-startup-id xrdb -load ~/.Xresources
-exec --no-startup-id dunst
-exec --no-startup-id pasystray
-exec --no-startup-id nm-applet --indicator
-exec --no-startup-id blueman-tray
-exec --no-startup-id dropbox
+exec xrdb -load ~/.Xresources
+exec dunst
+exec pasystray
+exec nm-applet --indicator
+exec blueman-tray
+exec dropbox
 
-exec_always --no-startup-id killall fcitx5
-exec_always --no-startup-id killall waybar
-exec_always --no-startup-id killall swayidle
+exec_always killall fcitx5
+exec_always killall waybar
+exec_always killall swayidle
 
-exec_always --no-startup-id fcitx5 -dr
-exec_always --no-startup-id waybar
-exec_always --no-startup-id swayidle -w \
+exec_always fcitx5 -dr
+exec_always waybar
+exec_always swayidle -w \
     timeout 10  'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
          resume 'swaymsg "output * dpms on"' \
     timeout 300 'swaymsg "output * dpms off"' \
