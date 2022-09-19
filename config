@@ -108,7 +108,6 @@ bindsym $mod+Control+c kill
 # Launching programs
 bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -modi drun#run -show drun -show-icons -drun-show-actions
 bindsym $mod+c exec python ~/.config/sway/quick-command
-bindsym $mod+Control+d exec /usr/libexec/mozc/mozc_tool --mode=word_register_dialog
 
 # Rofi
 bindsym $mod+Shift+d exec ~/.local/bin/run-if-some "nemo"                                      "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a directory' | sed -e "s#^~#$HOME#")"
