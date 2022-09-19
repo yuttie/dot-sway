@@ -71,8 +71,6 @@ gaps outer 0
 default_border normal 4
 default_floating_border normal 4
 titlebar_padding 12 6
-# Force the border to any windows including ones with client-side decorations
-for_window [class=".*"] border normal 4
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod normal
