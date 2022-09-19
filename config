@@ -213,8 +213,6 @@ bindsym $mod+Shift+m exec ~/.config/sway/move-to-and-focus-workspace
 bindsym $mod+Control+x exec swaylock -f -e -c 000000
 # reload the configuration file
 bindsym $mod+Control+r reload; exec notify-send --icon=system-run-symbolic --expire-time=3000 i3 'Configuration reloaded.'
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Control+Shift+r exec "swaymsg restart; notify-send --icon=system-restart-symbolic --expire-time=3000 i3 'Restarted.'"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Control+q exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 
