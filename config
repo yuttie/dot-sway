@@ -21,6 +21,10 @@ output * scale 1
 
 output * bg ~/wallpaper fill
 
+set $laptop_output eDP-1
+bindswitch --reload --locked lid:on output $laptop_output disable
+bindswitch --reload --locked lid:off output $laptop_output enable
+
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -264,6 +268,9 @@ exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DE
 # exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
 exec tmux setenv -g SWAYSOCK "$SWAYSOCK"
 exec tmux setenv -g I3SOCK "$I3SOCK"
+
+# Check clamshell mode
+exec_always $HOME/.config/sway/check_clamshell_mode.sh
 
 # Autostart
 exec xrdb -load ~/.Xresources
