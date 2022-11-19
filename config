@@ -75,6 +75,9 @@ titlebar_padding 12 6
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod normal
 
+# Cursor theme and size
+seat seat0 xcursor_theme Paper 32
+
 # Don't let focus follow a mouse cursor
 focus_follows_mouse no
 
