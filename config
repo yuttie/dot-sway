@@ -111,13 +111,13 @@ bindsym Control+Print       exec "grimshot --notify save area ~/Pictures/area_$(
 bindsym $mod+Control+c kill
 
 # Launching programs
-bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -modi drun#run -show drun -show-icons -drun-show-actions
+bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -modi drun#run -show drun -show-icons -drun-show-actions
 bindsym $mod+c exec python ~/.config/sway/quick-command
 
 # Rofi
-bindsym $mod+Shift+d exec ~/.local/bin/run-if-some "nemo"                                      "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a directory' | sed -e "s#^~#$HOME#")"
-bindsym $mod+Shift+t exec ~/.local/bin/run-if-some "$HOME/.local/bin/term start --always-new-process --cwd" "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p 'Open a terminal with a directory' | sed -e "s#^~#$HOME#")"
-bindsym $mod+Shift+p exec ~/.local/bin/run-if-some "xdg-open"                                  "$(fd --type f '\.pdf$' ~/Literature | sed -e "s#^$HOME/Literature/##" | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "Open a paper" | sed -e "s#^#$HOME/Literature/#")"
+bindsym $mod+Shift+d exec ~/.local/bin/run-if-some "nemo"                                      "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p 'Open a directory' | sed -e "s#^~#$HOME#")"
+bindsym $mod+Shift+t exec ~/.local/bin/run-if-some "$HOME/.local/bin/term start --always-new-process --cwd" "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p 'Open a terminal with a directory' | sed -e "s#^~#$HOME#")"
+bindsym $mod+Shift+p exec ~/.local/bin/run-if-some "xdg-open"                                  "$(fd --type f '\.pdf$' ~/Literature | sed -e "s#^$HOME/Literature/##" | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p "Open a paper" | sed -e "s#^#$HOME/Literature/#")"
 
 # Mako
 bindsym $mod+Control+n exec makoctl set-paused toggle
