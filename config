@@ -120,7 +120,7 @@ bindsym $mod+Shift+t exec ~/.local/bin/run-if-some "$HOME/.local/bin/term start 
 bindsym $mod+Shift+p exec ~/.local/bin/run-if-some "xdg-open"                                  "$(fd --type f '\.pdf$' ~/Literature | sed -e "s#^$HOME/Literature/##" | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p "Open a paper" | sed -e "s#^#$HOME/Literature/#")"
 
 # Mako
-bindsym $mod+Control+n exec makoctl set-paused toggle
+bindsym $mod+Control+n exec makoctl mode | grep do-not-disturb && makoctl mode -r do-not-disturb || makoctl mode -a do-not-disturb
 bindsym $mod+Control+i exec makoctl invoke
 bindsym $mod+Control+d exec makoctl dismiss
 bindsym $mod+Control+s exec makoctl restore
