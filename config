@@ -35,16 +35,6 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:Sans 16
 
-# Colors with picom
-# class                 border    backgr.   text    indicator   child_border
-#client.focused          #ffffff11 #ffffff44 #40424f #ffffff22   #ffffff22
-#client.focused_inactive #ffffff00 #88888822 #40424f #ffffff00   #ffffff00
-#client.unfocused        #ffffff00 #88888822 #40424f #ffffff00   #ffffff00
-#client.urgent           #ff000011 #ff000022 #40424f #ff000022   #ff000022
-#client.placeholder      #ffffff11 #88888822 #40424f #ffffff22   #ffffff22
-#client.background       #ffffff
-
-# Colors without picom
 # class                 border     background text       indicator  child_border
 client.focused          #8badc1    #8badc1    #ffffff    #ffffff    #8badc1
 client.focused_inactive #6a96af    #6a96af    #b9ccdf    #ffffff    #6a96af
