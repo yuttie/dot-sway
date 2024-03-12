@@ -105,9 +105,9 @@ bindsym $mod+r exec env PATH=$HOME/.local/bin:$PATH rofi -no-case-sensitive -mat
 bindsym $mod+c exec python ~/.config/sway/quick-command
 
 # Rofi
-bindsym $mod+Shift+d exec ~/.local/bin/run-if-some "nemo"                                      "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p 'Open a directory' | sed -e "s#^~#$HOME#")"
-bindsym $mod+Shift+t exec ~/.local/bin/run-if-some "$HOME/.local/bin/term start --always-new-process --cwd" "$(fd --type d . ~/ | sed -e "s#^$HOME#~#" | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p 'Open a terminal with a directory' | sed -e "s#^~#$HOME#")"
-bindsym $mod+Shift+p exec ~/.local/bin/run-if-some "xdg-open"                                  "$(fd --type f '\.pdf$' ~/Literature | sed -e "s#^$HOME/Literature/##" | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p "Open a paper" | sed -e "s#^#$HOME/Literature/#")"
+bindsym $mod+Shift+d exec ~/.local/bin/run-if-some "nemo"                                                   "$(fd --type d --type l --owner $USER --exclude /mnt --exclude /snapshot --base-directory / --absolute-path | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p 'Open a directory')"
+bindsym $mod+Shift+t exec ~/.local/bin/run-if-some "$HOME/.local/bin/term start --always-new-process --cwd" "$(fd --type d --type l --owner $USER --exclude /mnt --exclude /snapshot --base-directory / --absolute-path | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p 'Open a terminal with a directory')"
+bindsym $mod+Shift+p exec ~/.local/bin/run-if-some "xdg-open"                                               "$HOME/Literature/$(fd --type f --type l --extension pdf --base-directory ~/Literature | rofi -no-case-sensitive -matching regex -sort -sorting-method fzf -dmenu -i -p "Open a paper")"
 
 # Mako
 bindsym $mod+Control+n exec makoctl mode | grep do-not-disturb && makoctl mode -r do-not-disturb || makoctl mode -a do-not-disturb
