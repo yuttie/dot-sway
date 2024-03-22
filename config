@@ -200,6 +200,10 @@ bindsym $mod+Shift+Control+Down move workspace to output down
 bindsym $mod+Shift+Control+Up move workspace to output up
 bindsym $mod+Shift+Control+Right move workspace to output right
 
+# Backlight
+bindsym $mod+F5 exec light -U 25%
+bindsym $mod+F6 exec light -A 25%
+
 # switch or move focused container to dynamically selected workspace
 bindsym $mod+v exec swaymsg workspace `swaymsg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "workspace"`
 bindsym $mod+m exec swaymsg move container to workspace `swaymsg -t get_workspaces | jq -r '.[].name' | rofi -no-case-sensitive -matching fuzzy -sort -sorting-method fzf -dmenu -i -p "workspace"`
