@@ -252,6 +252,7 @@ for_window [app_id="^org.gnome.Calculator$"] floating enable
 for_window [app_id="^wdisplays$"] floating enable
 for_window [app_id="^nemo$" title=" Properties$"] floating enable
 for_window [app_id="^mpv$"] inhibit_idle visible
+for_window [app_id="^org.inkscape.Inkscape$" title="SVG Input"] floating enable
 for_window [class="^Minecraft"] floating enable
 for_window [title="^Cities: Skylines II$"] floating enable
 # Authy
