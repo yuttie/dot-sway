@@ -91,11 +91,11 @@ bindsym $mod+e         exec ~/.local/bin/term start --always-new-process -- nvim
 bindsym $mod+w         exec ~/.local/bin/google-chrome-stable
 
 # Screen capture
-bindsym Print               exec "grimshot --notify save screen ~/Pictures/screen_$(date +%Y-%m-%d-%H%M%S).png"
-bindsym Mod1+Print          exec "grimshot --notify save output ~/Pictures/output_$(date +%Y-%m-%d-%H%M%S).png"
-bindsym Shift+Print         exec "grimshot --notify save active ~/Pictures/active_$(date +%Y-%m-%d-%H%M%S).png"
-bindsym Control+Shift+Print exec "grimshot --notify save window ~/Pictures/window_$(date +%Y-%m-%d-%H%M%S).png"
-bindsym Control+Print       exec "grimshot --notify save area ~/Pictures/area_$(date +%Y-%m-%d-%H%M%S).png"
+bindsym Print               exec "grimshot --notify save screen - | cwebp -lossless -q 100 -m 6 -mt -o ~/Pictures/screen_$(date +%Y-%m-%d-%H%M%S).webp -- -"
+bindsym Mod1+Print          exec "grimshot --notify save output - | cwebp -lossless -q 100 -m 6 -mt -o ~/Pictures/output_$(date +%Y-%m-%d-%H%M%S).webp -- -"
+bindsym Shift+Print         exec "grimshot --notify save active - | cwebp -lossless -q 100 -m 6 -mt -o ~/Pictures/active_$(date +%Y-%m-%d-%H%M%S).webp -- -"
+bindsym Control+Shift+Print exec "grimshot --notify save window - | cwebp -lossless -q 100 -m 6 -mt -o ~/Pictures/window_$(date +%Y-%m-%d-%H%M%S).webp -- -"
+bindsym Control+Print       exec "grimshot --notify save area   - | cwebp -lossless -q 100 -m 6 -mt -o ~/Pictures/area_$(date +%Y-%m-%d-%H%M%S).webp   -- -"
 
 # kill focused window
 bindsym $mod+Control+c kill
